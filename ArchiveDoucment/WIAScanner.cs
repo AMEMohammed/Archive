@@ -62,6 +62,7 @@ namespace WIATest
                 // select the correct scanner using the provided scannerId parameter
                 WIA.DeviceManager manager = new WIA.DeviceManager();
                 WIA.Device device = null;
+                
                 foreach (WIA.DeviceInfo info in manager.DeviceInfos)
                 {
                     if (info.DeviceID == scannerId)

@@ -128,7 +128,7 @@ namespace ArchiveDoucment
                         int idtype = (int)comboBox2.SelectedValue;
                         MemoryStream ms = new MemoryStream();
                         image11.Save(ms, pictureBox1.Image.RawFormat);
-                        dbsql.AddNewDoucment(idtype, idor, textBox1.Text, DateTime.Now, textBox2.Text, ms.ToArray());
+                        dbsql.AddNewDoucment(idtype, idor, textBox1.Text,dateTimePicker1.Value.Date, textBox2.Text, ms.ToArray());
                         textBox1.Text = "";
                         textBox2.Text = "";
                         LoadDate();
@@ -168,6 +168,16 @@ namespace ArchiveDoucment
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
