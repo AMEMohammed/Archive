@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD9F9518-8E42-4539-AB82-964AFDAF7AE3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArchiveDoucment</RootNamespace>
+    <AssemblyName>ArchiveDoucment</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dooo_1ol_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Interop.WIA">
+      <HintPath>C:\Users\Mohammed Alhazmee\Downloads\Compressed\Scannerapplication\Scannerapplication\Scannerapplication\Resources\Interop.WIA.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbsql.cs" />
+    <Compile Include="frmAupte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAupte.Designer.cs">
+      <DependentUpon>frmAupte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuckUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuckUp.Designer.cs">
+      <DependentUpon>frmBuckUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmload.Designer.cs">
+      <DependentUpon>frmload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewDoucment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewDoucment.Designer.cs">
+      <DependentUpon>frmNewDoucment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchDoucment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchDoucment.Designer.cs">
+      <DependentUpon>frmSearchDoucment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowImage.Designer.cs">
+      <DependentUpon>frmShowImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmType.Designer.cs">
+      <DependentUpon>frmType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxManager.cs" />
+    <Compile Include="Orgnation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orgnation.Designer.cs">
+      <DependentUpon>Orgnation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\crp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WIAScanner.cs" />
+    <EmbeddedResource Include="frmAupte.resx">
+      <DependentUpon>frmAupte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuckUp.resx">
+      <DependentUpon>frmBuckUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmload.resx">
+      <DependentUpon>frmload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewDoucment.resx">
+      <DependentUpon>frmNewDoucment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchDoucment.resx">
+      <DependentUpon>frmSearchDoucment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowImage.resx">
+      <DependentUpon>frmShowImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmType.resx">
+      <DependentUpon>frmType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orgnation.resx">
+      <DependentUpon>Orgnation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RPT\crp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dooo_1ol_icon.ico" />
+    <Content Include="Resources\1477373_585837281487657_228511293_n.jpg" />
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\21077680_1150948591703853_1587301455004253357_n.jpg" />
+    <Content Include="Resources\add.png" />
+    <None Include="Resources\logout11.png" />
+    <None Include="Resources\refresh-button1.png" />
+    <None Include="Resources\rubbish-bin1.png" />
+    <None Include="Resources\edit1.png" />
+    <None Include="Resources\plus1.png" />
+    <None Include="Resources\icons8-Add Filled-501.png" />
+    <None Include="Resources\add1.png" />
+    <Content Include="Resources\cloud-backup-up-arrow.png" />
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\database %281%29.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\database1.png" />
+    <Content Include="Resources\diskette.png" />
+    <None Include="Resources\document-add-black-interface-symbol-with-plus-sign.png" />
+    <None Include="Resources\diskette1.png" />
+    <Content Include="Resources\documents.png" />
+    <Content Include="Resources\documents1.png" />
+    <Content Include="Resources\dollar-symbol.png" />
+    <None Include="Resources\dooo.jpg" />
+    <Content Include="Resources\edit-interface-sign %281%29.png" />
+    <Content Include="Resources\edit-interface-sign.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\enter.png" />
+    <Content Include="Resources\face.jpg" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\face1.jpg" />
+    <Content Include="Resources\gg.jpg" />
+    <Content Include="Resources\give-money.png" />
+    <Content Include="Resources\icons8-Add Filled-50.png" />
+    <Content Include="Resources\images.jpg" />
+    <Content Include="Resources\key.png" />
+    <None Include="Resources\key1.png" />
+    <Content Include="Resources\keyhole.png" />
+    <Content Include="Resources\logout %281%29.png" />
+    <None Include="Resources\logout %281%291.png" />
+    <None Include="Resources\logout %281%292.png" />
+    <None Include="Resources\logout %281%293.png" />
+    <Content Include="Resources\logout %282%29.png" />
+    <Content Include="Resources\logout.png" />
+    <Content Include="Resources\logout1.png" />
+    <Content Include="Resources\magnifying-glass.png" />
+    <None Include="Resources\magnifying-glass1.png" />
+    <Content Include="Resources\main-file.png" />
+    <Content Include="Resources\newspaper.png" />
+    <None Include="Resources\open-exit-door.png" />
+    <None Include="Resources\online_archive_files_at you_fingertips.png" />
+    <Content Include="Resources\open-file-button.png" />
+    <Content Include="Resources\padlock %281%29.png" />
+    <Content Include="Resources\padlock.png" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\placeholder-point.png" />
+    <None Include="Resources\padlock1.png" />
+    <Content Include="Resources\plus %281%29.png" />
+    <Content Include="Resources\plus %282%29.png" />
+    <Content Include="Resources\plus.png" />
+    <Content Include="Resources\print.png" />
+    <Content Include="Resources\printer-.png" />
+    <None Include="Resources\printer-1.png" />
+    <Content Include="Resources\rack2.jpg" />
+    <Content Include="Resources\rack22.jpg" />
+    <Content Include="Resources\refresh-button %281%29.png" />
+    <Content Include="Resources\refresh-button %282%29.png" />
+    <Content Include="Resources\refresh-button.png" />
+    <Content Include="Resources\rr.jpg" />
+    <Content Include="Resources\rubbish-bin.png" />
+    <Content Include="Resources\save %281%29.png" />
+    <Content Include="Resources\save %281%291.png" />
+    <Content Include="Resources\save.png" />
+    <None Include="Resources\scanner.png" />
+    <Content Include="Resources\settings-for-categories.png" />
+    <Content Include="Resources\settings-gears.png" />
+    <Content Include="Resources\town-tower-building.png" />
+    <Content Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
