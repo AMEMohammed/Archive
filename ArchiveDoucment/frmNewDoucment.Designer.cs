@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,16 +50,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,6 +79,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اضافة مستند";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.dateTimePicker1);
+            this.groupBox7.Location = new System.Drawing.Point(6, 47);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(225, 66);
+            this.groupBox7.TabIndex = 15;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "تاريخ السند";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(7, 23);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(212, 27);
+            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 10, 28, 0, 0, 0, 0);
+            // 
             // button6
             // 
             this.button6.Image = global::ArchiveDoucment.Properties.Resources.refresh_button1;
@@ -93,7 +112,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Location = new System.Drawing.Point(6, 128);
+            this.groupBox6.Location = new System.Drawing.Point(6, 119);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(852, 79);
             this.groupBox6.TabIndex = 14;
@@ -112,14 +131,14 @@
             this.groupBox5.Controls.Add(this.textBox1);
             this.groupBox5.Location = new System.Drawing.Point(237, 47);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(235, 75);
+            this.groupBox5.Size = new System.Drawing.Size(235, 66);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "اسم المستند";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 35);
+            this.textBox1.Location = new System.Drawing.Point(6, 26);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(225, 27);
             this.textBox1.TabIndex = 0;
@@ -162,9 +181,9 @@
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Location = new System.Drawing.Point(10, 224);
+            this.groupBox4.Location = new System.Drawing.Point(10, 204);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(848, 435);
+            this.groupBox4.Size = new System.Drawing.Size(848, 455);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "صورة المستند";
@@ -195,8 +214,8 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(6, 74);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(836, 355);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(836, 375);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -217,7 +236,7 @@
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Location = new System.Drawing.Point(478, 47);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(180, 75);
+            this.groupBox3.Size = new System.Drawing.Size(180, 66);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "نوع المستند";
@@ -225,9 +244,9 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(9, 26);
+            this.comboBox2.Location = new System.Drawing.Point(6, 26);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 27);
+            this.comboBox2.Size = new System.Drawing.Size(168, 27);
             this.comboBox2.TabIndex = 0;
             // 
             // groupBox2
@@ -235,7 +254,7 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Location = new System.Drawing.Point(664, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(194, 75);
+            this.groupBox2.Size = new System.Drawing.Size(194, 66);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "الجهة";
@@ -248,30 +267,11 @@
             this.comboBox1.Size = new System.Drawing.Size(179, 27);
             this.comboBox1.TabIndex = 0;
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.dateTimePicker1);
-            this.groupBox7.Location = new System.Drawing.Point(6, 47);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(225, 75);
-            this.groupBox7.TabIndex = 15;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "تاريخ السند";
-            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 27);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2017, 10, 28, 0, 0, 0, 0);
-            // 
             // frmNewDoucment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 734);
+            this.ClientSize = new System.Drawing.Size(892, 733);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -284,6 +284,7 @@
             this.Load += new System.EventHandler(this.frmNewDoucment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -292,7 +293,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
