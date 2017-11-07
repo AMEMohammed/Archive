@@ -50,6 +50,8 @@ namespace ArchiveDoucment
         {
             try
             {
+                comboBox1.Enabled = true;
+                comboBox2.Enabled = true;
                 comboBox1.DataSource = dbsql.GetAllOrganization();
                 comboBox1.DisplayMember = "الجهة";
                 comboBox1.ValueMember = "الرقم";
@@ -129,11 +131,24 @@ namespace ArchiveDoucment
                         MemoryStream ms = new MemoryStream();
                         image11.Save(ms, pictureBox1.Image.RawFormat);
                         dbsql.AddNewDoucment(idtype, idor, textBox1.Text, DateTime.Now, textBox2.Text, ms.ToArray());
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        LoadDate();
-                        image11 = null;
-                        pictureBox1.Image = null;
+                        if (checkBox1.Checked == false)
+                        {
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                            comboBox1.Enabled = true;
+                            comboBox2.Enabled = true;
+                            LoadDate();
+                            image11 = null;
+                            pictureBox1.Image = null;
+                        }
+                        else
+                        {
+                            image11 = null;
+                            pictureBox1.Image = null;
+                            comboBox1.Enabled = false;
+                            comboBox2.Enabled = false;
+
+                        }
                     }
                 }
                 catch(Exception  ex)

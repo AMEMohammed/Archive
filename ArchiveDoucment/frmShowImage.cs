@@ -58,7 +58,7 @@ namespace ArchiveDoucment
         {
             Image i = dbsql.GetImage(id);
         
-            e.Graphics.DrawImage(i,10, 10, i.Width, i.Height);
+            e.Graphics.DrawImage(i, i.Width, i.Height);
         }
 
     }

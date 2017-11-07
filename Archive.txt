@@ -1,0 +1,52 @@
+USE [Archive]
+GO
+/****** Object:  User [my]    Script Date: 11/04/2017 09:06:44 ******/
+CREATE USER [my] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[Organization]    Script Date: 11/04/2017 09:06:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Organization](
+	[IdOrga] [int] IDENTITY(1,1) NOT NULL,
+	[NameOrga] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Organization] PRIMARY KEY CLUSTERED 
+(
+	[IdOrga] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DoucmentType]    Script Date: 11/04/2017 09:06:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DoucmentType](
+	[IdType] [int] IDENTITY(1,1) NOT NULL,
+	[NameType] [nvarchar](250) NULL,
+ CONSTRAINT [PK_DoucmentType] PRIMARY KEY CLUSTERED 
+(
+	[IdType] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Doucment]    Script Date: 11/04/2017 09:06:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Doucment](
+	[IdDoucment] [int] IDENTITY(1,1) NOT NULL,
+	[IdType] [int] NULL,
+	[IdOr] [int] NULL,
+	[Doucment] [nvarchar](50) NULL,
+	[SaveDate] [datetime] NULL,
+	[descr] [nvarchar](350) NULL,
+	[DoucmentImag] [image] NULL,
+ CONSTRAINT [PK_Doucment] PRIMARY KEY CLUSTERED 
+(
+	[IdDoucment] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO

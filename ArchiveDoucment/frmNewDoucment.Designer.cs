@@ -48,6 +48,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -115,7 +116,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(2, 26);
+            this.textBox1.Location = new System.Drawing.Point(6, 26);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(282, 27);
             this.textBox1.TabIndex = 0;
@@ -154,6 +155,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.checkBox1);
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.pictureBox1);
@@ -220,7 +222,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(2, 26);
+            this.comboBox2.Location = new System.Drawing.Point(9, 27);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(147, 27);
             this.comboBox2.TabIndex = 0;
@@ -242,6 +244,17 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 27);
             this.comboBox1.TabIndex = 0;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 45);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox1.Size = new System.Drawing.Size(112, 23);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "تبيت الاختيار";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // frmNewDoucment
             // 
@@ -265,6 +278,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -293,5 +307,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
