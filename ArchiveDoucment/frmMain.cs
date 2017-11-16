@@ -18,6 +18,7 @@ namespace ArchiveDoucment
           
             InitializeComponent();
         }
+        DBSQL dbsql = new DBSQL();
        
         private void button1_Click(object sender, EventArgs e)
         {
@@ -123,7 +124,30 @@ namespace ArchiveDoucment
         {
             if (MessageBox.Show("هل تريد الخروج", "خروج", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign) == DialogResult.Yes  )
             {
-                e.Cancel = false;
+                try {
+
+                    string path=Properties.Settings.Default.pathBukup+"\\Archive" + DateTime.Now.ToShortDateString().Replace('/', '-') + DateTime.Now.ToShortTimeString().Replace(':', '-') + ".bak";
+                    dbsql.BuckUpdatabase(path);
+                    MessageBox.Show("تمت عملية النسخة الاحتياطية بنجاح ");
+                        
+
+                }
+
+
+                catch
+
+                {
+                    MessageBox.Show("هناك مشكلة في عمل النسخة الاحتياطية");
+                    e.Cancel = false;
+                }
+                finally
+                {
+                    e.Cancel = false;
+                }
+                
+
+              
+                
             }
             else
             {

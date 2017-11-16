@@ -119,6 +119,7 @@ namespace ArchiveDoucment
             string idty = "";
             string idor = "";
             string name = textBox1.Text;
+            string dec = textBox2.Text;
            if(checkBox1.Checked==false)
             {
                 idor = comboBox1.SelectedValue.ToString();
@@ -131,14 +132,14 @@ namespace ArchiveDoucment
             {
                 if (checkBox3.Checked == true)
                 {
-                    dataGridView1.DataSource = dbsql.SearchDoucmentByDate(idty, idor, name, dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+                    dataGridView1.DataSource = dbsql.SearchDoucmentByDate(idty, idor, name,dec, dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
                     
                 }
 
 
                 else
                 {
-                    dataGridView1.DataSource = dbsql.SearchDoucment(idty, idor, name);
+                    dataGridView1.DataSource = dbsql.SearchDoucment(idty, idor, name,dec);
                 }
             }
             catch (Exception ex)
@@ -252,6 +253,16 @@ namespace ArchiveDoucment
             GetData();
             textBox1.Text = "";
             dataGridView1 = null;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

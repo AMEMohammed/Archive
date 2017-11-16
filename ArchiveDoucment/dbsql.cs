@@ -239,18 +239,20 @@ namespace ArchiveDoucment
          //////////
          /// get doucment by date
          /// 
-         public DataTable SearchDoucmentByDate(string IdTy,string IdOr,string Name,DateTime d1,DateTime d2)
+         public DataTable SearchDoucmentByDate(string IdTy,string IdOr,string Name,string dec,DateTime d1,DateTime d2)
         {
             DataTable dt = new DataTable();
             IdTy = "%" + IdTy;
             IdOr = "%" + IdOr;
             Name = "%" + Name + "%";
-            cmd = new SqlCommand("select Doucment.IdDoucment as 'رقم' ,Organization.NameOrga as'الجهة' ,DoucmentType.NameType as 'النوع', Doucment.Doucment as 'اسم المستند' ,Doucment.SaveDate as 'تاريخ الحفظ' ,Doucment.descr as 'ملاحظات'  from Doucment,DoucmentType,Organization where Doucment.IdType=DoucmentType.IdType and Doucment.IdOr=Organization.IdOrga and CONVERT(nvarchar,Doucment.IdType) like @idtype and CONVERT(nvarchar,Doucment.IdOr) like @idor and Doucment.Doucment like @name  and Doucment.SaveDate between @d1 and @d2", con);
+            dec = "%" +dec  + "%";
+            cmd = new SqlCommand("select Doucment.IdDoucment as 'رقم' ,Organization.NameOrga as'الجهة' ,DoucmentType.NameType as 'النوع', Doucment.Doucment as 'اسم المستند' ,Doucment.SaveDate as 'تاريخ الحفظ' ,Doucment.descr as 'ملاحظات'  from Doucment,DoucmentType,Organization where Doucment.IdType=DoucmentType.IdType and Doucment.IdOr=Organization.IdOrga and CONVERT(nvarchar,Doucment.IdType) like @idtype and CONVERT(nvarchar,Doucment.IdOr) like @idor and Doucment.Doucment like @name and Doucment.descr like @dec  and Doucment.SaveDate between @d1 and @d2", con);
             cmd.Parameters.AddWithValue("@idtype",IdTy);
             cmd.Parameters.AddWithValue("@idor",IdOr);
             cmd.Parameters.AddWithValue("@name",Name);
             cmd.Parameters.AddWithValue("@d1",d1);
             cmd.Parameters.AddWithValue("@d2",d2);
+            cmd.Parameters.AddWithValue("@dec", dec);
             adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             return dt;
@@ -260,17 +262,18 @@ namespace ArchiveDoucment
         //////////
         /// get doucment
         /// 
-        public DataTable SearchDoucment(string IdTy, string IdOr, string Name)
+        public DataTable SearchDoucment(string IdTy, string IdOr, string Name,string dec)
         {
             DataTable dt = new DataTable();
             IdTy = "%" + IdTy;
             IdOr = "%" + IdOr;
             Name = "%" + Name + "%";
-            cmd = new SqlCommand("select Doucment.IdDoucment as 'رقم' ,Organization.NameOrga as'الجهة' ,DoucmentType.NameType as 'النوع', Doucment.Doucment as 'اسم المستند' ,Doucment.SaveDate as 'تاريخ الحفظ' ,Doucment.descr as 'ملاحظات'  from Doucment,DoucmentType,Organization where Doucment.IdType=DoucmentType.IdType and Doucment.IdOr=Organization.IdOrga and CONVERT(nvarchar,Doucment.IdType) like @idtype and CONVERT(nvarchar,Doucment.IdOr) like @idor and Doucment.Doucment like @name ", con);
+            dec = "%" + dec + "%";
+            cmd = new SqlCommand("select Doucment.IdDoucment as 'رقم' ,Organization.NameOrga as'الجهة' ,DoucmentType.NameType as 'النوع', Doucment.Doucment as 'اسم المستند' ,Doucment.SaveDate as 'تاريخ الحفظ' ,Doucment.descr as 'ملاحظات'  from Doucment,DoucmentType,Organization where Doucment.IdType=DoucmentType.IdType and Doucment.IdOr=Organization.IdOrga and CONVERT(nvarchar,Doucment.IdType) like @idtype and CONVERT(nvarchar,Doucment.IdOr) like @idor and Doucment.Doucment like @name and  Doucment.descr like @dec", con);
             cmd.Parameters.AddWithValue("@idtype", IdTy);
             cmd.Parameters.AddWithValue("@idor", IdOr);
             cmd.Parameters.AddWithValue("@name", Name);
-            
+            cmd.Parameters.AddWithValue("@dec", dec);
             adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             return dt;
@@ -314,13 +317,7 @@ namespace ArchiveDoucment
             cmd.Parameters.AddWithValue("@d", path);
             con.Open();
             res = cmd.ExecuteNonQuery();
-
-
-
-
             con.Close();
-
-
             return res;
 
         }

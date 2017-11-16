@@ -62,12 +62,12 @@ namespace ArchiveDoucment.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("c:\\\\")]
-        public string pathbukup {
+        public string pathBukup {
             get {
-                return ((string)(this["pathbukup"]));
+                return ((string)(this["pathBukup"]));
             }
             set {
-                this["pathbukup"] = value;
+                this["pathBukup"] = value;
             }
         }
     }

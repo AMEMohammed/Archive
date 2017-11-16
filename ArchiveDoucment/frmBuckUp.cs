@@ -42,6 +42,8 @@ namespace ArchiveDoucment
                 {
                     string path = textBox1.Text + "\\Archive" + DateTime.Now.ToShortDateString().Replace('/', '-') + DateTime.Now.ToShortTimeString().Replace(':', '-') + ".bak";
                     dbsql.BuckUpdatabase(path);
+                    Properties.Settings.Default.pathBukup = textBox1.Text;
+                    Properties.Settings.Default.Save();
                     MessageBox.Show("تمت عملية انشاء نسخة احتياطية بنجاح");
                     textBox1.Text = "";
                 }
@@ -61,6 +63,11 @@ namespace ArchiveDoucment
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmBuckUp_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = Properties.Settings.Default.pathBukup;
         }
     }
 }

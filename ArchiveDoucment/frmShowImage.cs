@@ -57,12 +57,10 @@ namespace ArchiveDoucment
               private void Pd_PrintPage(object sender, PrintPageEventArgs e)
         {
             Image i = dbsql.GetImage(id);
-        
+           // Image i = pictureBox1.Image;
             e.Graphics.DrawImage(i, i.Width, i.Height);
+            
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-               }
     }
 }
