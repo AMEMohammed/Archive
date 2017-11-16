@@ -61,5 +61,8 @@ namespace ArchiveDoucment
             e.Graphics.DrawImage(i, i.Width, i.Height);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+               }
     }
 }

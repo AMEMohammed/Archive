@@ -58,5 +58,17 @@ namespace ArchiveDoucment.Properties {
                 this["pass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\\\")]
+        public string pathbukup {
+            get {
+                return ((string)(this["pathbukup"]));
+            }
+            set {
+                this["pathbukup"] = value;
+            }
+        }
     }
 }

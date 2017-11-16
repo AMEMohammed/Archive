@@ -11,5 +11,8 @@
     <Setting Name="pass" Type="System.String" Scope="User">
       <Value Profile="(Default)">user</Value>
     </Setting>
+    <Setting Name="pathbukup" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
