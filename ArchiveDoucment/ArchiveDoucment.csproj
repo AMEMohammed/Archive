@@ -42,7 +42,7 @@
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Interop.WIA">
-      <HintPath>C:\Users\Mohammed Alhazmee\Downloads\Compressed\Scannerapplication\Scannerapplication\Scannerapplication\Resources\Interop.WIA.dll</HintPath>
+      <HintPath>..\..\Interop.WIA.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
@@ -146,6 +146,12 @@
       <DependentUpon>crp.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="stting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stting.Designer.cs">
+      <DependentUpon>stting.cs</DependentUpon>
+    </Compile>
     <Compile Include="WIAScanner.cs" />
     <EmbeddedResource Include="frmAupte.resx">
       <DependentUpon>frmAupte.cs</DependentUpon>
@@ -193,6 +199,9 @@
     <EmbeddedResource Include="RPT\crp.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stting.resx">
+      <DependentUpon>stting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -295,6 +304,7 @@
     <None Include="Resources\scanner.png" />
     <Content Include="Resources\settings-for-categories.png" />
     <Content Include="Resources\settings-gears.png" />
+    <None Include="Resources\settings-gears1.png" />
     <Content Include="Resources\town-tower-building.png" />
     <Content Include="Resources\user.png" />
   </ItemGroup>

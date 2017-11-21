@@ -14,5 +14,17 @@
     <Setting Name="pathBukup" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\\</Value>
     </Setting>
+    <Setting Name="Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./s20081</Value>
+    </Setting>
+    <Setting Name="UserSer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">onlyarchive</Value>
+    </Setting>
+    <Setting Name="PassSer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+    <Setting Name="NameDate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Archive</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

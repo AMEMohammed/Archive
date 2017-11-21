@@ -70,5 +70,53 @@ namespace ArchiveDoucment.Properties {
                 this["pathBukup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("./s20081")]
+        public string Server {
+            get {
+                return ((string)(this["Server"]));
+            }
+            set {
+                this["Server"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("onlyarchive")]
+        public string UserSer {
+            get {
+                return ((string)(this["UserSer"]));
+            }
+            set {
+                this["UserSer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("123456")]
+        public string PassSer {
+            get {
+                return ((string)(this["PassSer"]));
+            }
+            set {
+                this["PassSer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Archive")]
+        public string NameDate {
+            get {
+                return ((string)(this["NameDate"]));
+            }
+            set {
+                this["NameDate"] = value;
+            }
+        }
     }
 }

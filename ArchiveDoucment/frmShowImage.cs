@@ -40,27 +40,70 @@ namespace ArchiveDoucment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += PrintPage;
+            //here to select the printer attached to user PC
+            PrintDialog printDialog1 = new PrintDialog();
+            printDialog1.Document = pd;
+            DialogResult result = printDialog1.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += Pd_PrintPage;
+                try
+                {
+                    pd.Print();//this will trigger the Print Event handeler PrintPage
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
 
-                pd.Print();
+
+
+            //try
+            //{
+            //    PrintDocument pd = new PrintDocument();
+            //    pd.PrintPage += Pd_PrintPage;
+
+            //    pd.Print();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
+
+        //      private void Pd_PrintPage(object sender, PrintPageEventArgs e)
+        //{
+        //    Image i = dbsql.GetImage(id);
+        //   // Image i = pictureBox1.Image;
+        //    e.Graphics.DrawImage(i, i.Width, i.Height);
+
+        //}
+        private void PrintPage(object o, PrintPageEventArgs e)
+        {
+            try
+            {               
+                System.Drawing.Image img = pictureBox1.Image;
+
+                Rectangle m = e.MarginBounds;
+
+                if ((double)img.Width / (double)img.Height > (double)m.Width / (double)m.Height) // image is wider
+                {
+                    m.Height = (int)((double)img.Height / (double)img.Width * (double)m.Width);
+                }
+                else
+                {
+                    m.Width = (int)((double)img.Width / (double)img.Height * (double)m.Height);
+                }
+                e.Graphics.DrawImage(img, m);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-              private void Pd_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            Image i = dbsql.GetImage(id);
-           // Image i = pictureBox1.Image;
-            e.Graphics.DrawImage(i, i.Width, i.Height);
-            
-        }
-
     }
 }

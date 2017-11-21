@@ -25,7 +25,7 @@ namespace ArchiveDoucment
         {
             this.BackColor = Properties.Settings.Default.color;
 
-            try
+           // try
             {
                 dataGridView1.DataSource = dbsql.GetAllTypeDoucment();
                 MessageBoxManager.Yes = "نعم";
@@ -33,9 +33,9 @@ namespace ArchiveDoucment
                 MessageBoxManager.Register();
                 changeLanguage();
             }
-            catch (Exception ex)
+           // catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
             }
 
         }

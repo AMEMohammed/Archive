@@ -105,11 +105,18 @@ namespace ArchiveDoucment
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog openfile = new OpenFileDialog();
-            openfile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png"; 
-            if(openfile.ShowDialog()==DialogResult.OK)
+            openfile.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe;  *.png";
+            try
             {
-                image11= Image.FromFile(openfile.FileName);
-                pictureBox1.Image = Image.FromFile(openfile.FileName);
+                if (openfile.ShowDialog() == DialogResult.OK)
+                {
+                    image11 = Image.FromFile(openfile.FileName);
+                    pictureBox1.Image = Image.FromFile(openfile.FileName);
+                }
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message);
+                image11 = null;
+                pictureBox1.Image = null;
             }
         }
 /// <summary>
@@ -128,7 +135,8 @@ namespace ArchiveDoucment
                         int idtype = (int)comboBox2.SelectedValue;
                         MemoryStream ms = new MemoryStream();
                         image11.Save(ms, pictureBox1.Image.RawFormat);
-                        dbsql.AddNewDoucment(idtype, idor, textBox1.Text,dateTimePicker1.Value.Date, textBox2.Text, ms.ToArray());
+                        dbsql.AddNewDoucment(idtype, idor, textBox1.Text,Convert.ToDateTime(textBox3.Text), textBox2.Text, ms.ToArray());
+                      
                         if (checkBox1.Checked)
                         {
 
@@ -177,14 +185,43 @@ namespace ArchiveDoucment
             this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+       
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        { 
+            if (textBox3.Text.Length == 8)
+            {
+                string stt = textBox3.Text;
+
+                string day = stt[0].ToString() + stt[1].ToString();
+                string month = stt[2].ToString() + stt[3].ToString();
+
+                string year = stt[4].ToString() + stt[5].ToString() + stt[6].ToString() + stt[7].ToString();
+
+                textBox3.Text = day + "/" + month + "/" + year;
+                if ((Convert.ToInt32(day) > 0 && Convert.ToInt32(day) <= 31) && (Convert.ToInt32(month) > 0 && Convert.ToInt32(month) <= 12) && (Convert.ToInt32(year) > 1990 && Convert.ToInt32(year) <= Convert.ToInt32(DateTime.Now.Year.ToString())))
+                    textBox3.ForeColor = Color.Black;
+                else
+                    errordate();
+
+            }
+            else
+            {
+                errordate();
+            }
+        }
+        void errordate()
         {
+            textBox3.Focus();
+            textBox3.ForeColor = Color.Red;
 
         }
 
-        private void groupBox7_Enter(object sender, EventArgs e)
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
-}
+
+    }
+

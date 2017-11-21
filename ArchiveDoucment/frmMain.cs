@@ -122,15 +122,14 @@ namespace ArchiveDoucment
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("هل تريد الخروج", "خروج", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign) == DialogResult.Yes  )
+            if (MessageBox.Show("هل تريد عمل نسخة احتاطية قبل الخروج", "خروج", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign) == DialogResult.Yes  )
             {
                 try {
 
                     string path=Properties.Settings.Default.pathBukup+"\\Archive" + DateTime.Now.ToShortDateString().Replace('/', '-') + DateTime.Now.ToShortTimeString().Replace(':', '-') + ".bak";
                     dbsql.BuckUpdatabase(path);
                     MessageBox.Show("تمت عملية النسخة الاحتياطية بنجاح ");
-                        
-
+                
                 }
 
 
@@ -151,7 +150,7 @@ namespace ArchiveDoucment
             }
             else
             {
-                e.Cancel = true;
+                e.Cancel = false;
             }
           
         }
@@ -190,6 +189,11 @@ namespace ArchiveDoucment
             frmLogin fmr = new frmLogin(1);
             fmr.ShowDialog();
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new stting().ShowDialog();
         }
     }
 }

@@ -15,8 +15,8 @@ namespace ArchiveDoucment
 
 
         // private string ConnectionSreing = @"Data Source=.\s2008;Initial Catalog=Archive;UserId=";
-         private string ConnectionSreing = @"Data Source=.\s2008;Initial Catalog=Archive; User Id=onlyarchive; password=123456";
-        //   private string ConnectionStriingMaster = @"Data Source=" + Properties.Settings.Default.nmserver + ";Initial Catalog=master;Integrated Security=True";
+         private string ConnectionSreing = @"Data Source="+Properties.Settings.Default.Server+";Initial Catalog="+Properties.Settings.Default.NameDate+"; User Id="+Properties.Settings.Default.UserSer+"; password="+Properties.Settings.Default.PassSer+"";
+         private string ConnectionStriingMaster = @"Data Source=" + Properties.Settings.Default.Server + ";Initial Catalog=master; User Id = "+Properties.Settings.Default.UserSer+"; password="+Properties.Settings.Default.PassSer+"";
      
         public SqlConnection con;
         public SqlCommand cmd;
@@ -25,6 +25,7 @@ namespace ArchiveDoucment
         public DBSQL()
         {
             con = new SqlConnection(ConnectionSreing);
+          
         }
         ///  exuectue  qury ansert  and delete and update
         /// </summary>
